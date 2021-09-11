@@ -1,0 +1,26 @@
+// 
+// Styles
+//
+
+// Import variables
+@import "../css-scss/variables"; 
+
+// Import Bootstrap
+@import "../bootstrap/scss/bootstrap.scss";
+
+// Other Styles
+@import "./_custom.scss";
+
+// Components
+@import "./components/_buttons.scss";
+@import "./components/_navbar.scss";
+@import "./components/_images.scss";
+
+// Sections
+@import "./sections/_masthead.scss";
+@import "./sections/_section1.scss";
+@import "./sections/_section2.scss";
+@import "./sections/_footer.scss";
+@import "./sections/_requirements.scss";
+@import "./sections/_information.scss";
+

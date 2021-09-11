@@ -1,0 +1,50 @@
+//
+// Custom
+//
+
+// Scroll padding for all scroll targets on page used with
+// native CSS smooth scrolling
+//
+// https://caniuse.com/?search=scroll-padding
+
+html {
+    scroll-padding-top: 67px;
+}
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.header-margin{
+    margin-bottom: 90px;
+}
+
+.invert{
+    transform: rotateY(180deg);
+}
+
+@media (min-width: 992px){
+.translate {
+    transform: translate(10px, 0px)!important;
+}}
+
+:root {
+    --animate-delay: 0.3s;
+}
+
+@media (max-width: 570px){
+.responsive-video{
+display: flex;
+align-items: center;
+justify-content:center;
+text-align: center;
+}
+}
+
+.min-height{
+    min-height: 100vh - 21vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

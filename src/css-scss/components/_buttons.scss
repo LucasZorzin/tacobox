@@ -1,0 +1,216 @@
+//
+// Buttons
+//
+
+.btn {
+  border: none !important;
+}
+
+.btn-primary {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  background-image: $boton-background-image-hover2;
+}
+
+.btn-style {
+  text-transform: uppercase;
+  padding: 0.5rem 3rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  border-radius: 0;
+  background-image: $boton-background-image;
+  transition: all .2s!important;
+}
+
+.btn-style:hover {
+  transform: scale(1.03, 1.03);
+  background-image: $boton-background-image-hover;
+
+}
+
+/// section 2 button
+.buttons-section2 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 20px 20px 20px;
+  padding-top: 10px;
+}
+
+.buttons-section2__margin {
+  margin: 5px 20px 5px 20px;
+}
+
+.buttons-section2__margin-style {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  padding: 2px 10px 2px 10px;
+  color: white;
+  border: transparent;
+  background-image: $boton-background-image2;
+  border-radius: 0px;
+  // margin: 0px 30px 0px 30px;
+}
+
+.buttons-section2__margin-style:hover {
+  transform: scale(1.03, 1.03);
+  background-image: $boton-background-image-hover2;
+}
+
+// PC
+@media (min-width: 992px) {
+  .buttons-section2__margin-style {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8rem;
+    color: white;
+    border: transparent;
+    background-image: $boton-background-image2;
+    border-radius: 0px;
+    margin: 0px 30px 40px 30px;
+    padding: 20px 45px 20px 45px;
+  }
+}
+
+//narrow screens
+@media (max-width: 330px) {
+  .buttons-section2__margin {
+    margin: 5px 8px 5px 8px;
+  }
+}
+
+/// section 3 button
+
+.section__button3 {
+  margin: 5px 0px 5px 0px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.section__button3-style {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  padding: 5px 30px 5px 30px;
+  color: white;
+  border: 2px solid $orange !important ;
+  border-radius: 0px;
+  margin: 10px 0px 0px 0px;
+
+  transition: all .2s!important;
+}
+
+.section__button3-style:hover {
+  color:$orange;
+  font-weight: bold;
+  background-image: none;
+  background-color: white;
+  border: 2px solid $orange !important ;
+}
+
+// PC
+@media (min-width: 992px) {
+  .section__button3 {
+    margin: 5px 20px 5px 0px;
+    display: initial;
+    align-content: initial;
+    align-items: initial;
+    justify-content: initial;
+    text-decoration: none;
+  }
+}
+
+.btnFooter {
+  color: #ffffff00;
+  background-color: #ffffff00;
+}
+
+.btnFooter:hover {
+  color: #ffffff00;
+  background-color: #ffffff00;
+}
+
+.img-social:hover {
+  color: #ffffff00;
+  background-color: #ffffff00;
+}
+
+.centerM {
+  display: block;
+  // margin-top: 70px;
+  text-align: center;
+  align-items: center;
+}
+
+// PC
+@media (min-width: 992px) {
+  .centerM {
+    display: initial;
+    text-align: initial;
+    align-items: initial;
+  }
+}
+
+.black{
+  background-color:black;
+}
+
+// FLOATING BTN
+#btn-more{
+  display:none;
+}
+
+.floating-btn{
+  position:fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.social a, .icon-plus{
+  display:block;
+  text-decoration: none;
+  background: #1c1c1cf0;
+  color: white;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.4);
+  transition: all 500ms;
+}
+
+.social a:hover{
+  background: white;
+  // color: #1c1c1cf0;
+  color: $orange;
+}
+
+.social a{
+  margin-bottom: -15px;
+  opacity:0;
+  visibility: hidden;
+}
+
+#btn-more:checked~ .social a{
+  margin-bottom: 10px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-plus{
+  cursor:pointer;
+  background: $orange;
+  font-size: 23px;
+}
+
+#btn-more:checked~ .btn-more .icon-plus{
+  transform: rotate(137deg);
+  font-size: 25px;
+}

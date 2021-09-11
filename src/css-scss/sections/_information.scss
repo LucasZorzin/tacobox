@@ -1,0 +1,126 @@
+.col__1,
+.col__2,
+.col__3,
+.col__4 {
+    h1 {
+        font-size: 0.5rem;
+        font-family: "Raleway", sans-serif;
+    }
+
+    span {
+        display: table;
+        font-size: 1.3rem;
+        background: $boton-background-image;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-radius: 50%;
+        transform: translate(-60px, 40px);
+    }
+}
+
+.row-margin {
+    margin-left: 40px;
+}
+
+// PC
+@media (min-width: 992px) {
+    .row-margin {
+        margin-left: 50px;
+    }
+}
+
+.col__p {
+    line-height: 2;
+}
+
+.rewards-p {
+    font-family: "Manrope", sans-serif;
+}
+
+.about-us {
+    height: 570px;
+    background-color: $footer;
+    margin: 1rem;
+
+    .about-us__padding {
+        padding: 20px 20px 0 20px;
+
+        .about-us__padding-title {
+            font-size: 1.9rem;
+            color: white;
+            text-align: center;
+        }
+
+        .about-us__padding-p {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-right: 0;
+            color: #9c9c9c;
+            line-height: 1.65;
+            font-family: "Manrope", sans-serif;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    }
+
+    .about-us__imagen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .about-us__imagen-style {
+            object-fit: scale-down;
+        }
+    }
+}
+
+// Tablets
+@media (min-width: 768px) {
+    .about-us {
+        height: 310px;
+
+        .about-us__padding {
+            padding: 20px 20px 0 20px;
+
+            .about-us__padding-title {
+                text-align: initial;
+            }
+
+            .about-us__padding-p {
+                font-size: 0.8rem;
+                text-align: initial;
+            }
+        }
+    }
+}
+
+// PC
+@media (min-width: 992px) {
+    .about-us {
+        margin: 3rem;
+        height: 480px !important;
+
+        .about-us__padding {
+            padding: 70px 40px 0 40px!important;
+
+            .about-us__padding-title {
+                font-size: 3rem;
+                text-align: initial;
+                padding-left: 30px;
+            }
+
+            .about-us__padding-p {
+                margin-top: 30px;
+                margin-bottom: 1rem;
+                padding-right: 80px;
+                color: #9c9c9c;
+                line-height: 1.65;
+                font-family: "Manrope", sans-serif;
+                text-align: initial;
+                font-size: 1rem !important;
+                padding-left: 30px;
+            }
+        }
+    }
+}

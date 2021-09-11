@@ -1,0 +1,271 @@
+//
+// Typography
+//
+
+//navbar
+.easter-egg{
+    font-size: 0.5rem;
+    text-align: center;
+    color: #ffffff00;
+}
+
+///Section 1 and 3
+.section__title {
+    text-align: center;
+    margin-top: 18px;
+    margin-left: 0px;
+    font-size: 2rem;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.9px;
+}
+
+.section__h4 {
+    margin: 8px 8px 8px 0px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section__p {
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+// PC
+@media (min-width: 992px) {
+    .section__title {
+        font-size: 3rem;
+        font-family: "Manrope", sans-serif;
+        text-align: start;
+        letter-spacing: 2px;
+    }
+
+    .section__h4 {
+        margin: 8px 8px 8px 0px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        font-size: 0.8rem;
+        text-align: start;
+    }
+
+    .section__p {
+        text-align: start;
+        margin: 0px 25px 0px 0px;
+    }
+}
+
+///Section 2
+
+.section2__title {
+    padding-top: 5px;
+    font-size: 1.2rem;
+    font-family: "Manrope", sans-serif;
+    text-align: center;
+    color: white;
+    /* margin-top: 50px; */
+    font-weight: 500;
+    margin: 0px 12px 0px 12px;
+}
+
+.section2__subtitle {
+    margin: 10px 0px 8px 0px;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}
+
+.responsive-p{
+    color: grey;
+    transform: translate(0px, -29px);
+    text-align: center;
+}
+
+// PC
+@media (min-width: 992px) {
+    .responsive-p{
+       display:none;
+    }
+}
+
+// PC
+@media (min-width: 992px) {
+    .section2__title {
+        padding-top: 50px !important;
+        font-size: 2.5rem;
+        font-family: "Manrope", sans-serif;
+        text-align: center;
+        color: white;
+        /* margin-top: 50px; */
+        font-weight: bold;
+        margin-left: 0px;
+    }
+
+    .section2__subtitle {
+        margin-top: 20px;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.999rem;
+        font-weight: 500;
+        text-align: center;
+        color: white;
+    }
+}
+
+//small screens
+@media (max-width: 330px) {
+    .section2__title {
+        padding-top: 50px !important;
+        font-size: 0.8rem;
+        font-family: "Manrope", sans-serif;
+        text-align: center;
+        color: white;
+        /* margin-top: 50px; */
+        font-weight: bold;
+        // margin-left: 0px;
+    }
+
+    .section2__subtitle {
+        margin-top: 20px;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-align: center;
+        color: white;
+    }
+}
+
+// Footer
+.footer {
+    .footer__title {
+        font-size: 1.5rem;
+        font-family: "Raleway", sans-serif;
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer__title:hover {
+        color: $pink;
+    }
+
+    .footer__subtitle {
+        font-size: 0.9rem;
+        font-family: "Manrope", sans-serif;
+        text-decoration: none !important;
+        color: rgb(173, 173, 173) !important;
+    }
+
+    .footer__subtitle:hover {
+        color: #6c757d !important;
+    }
+}
+
+.margin-title {
+    margin-bottom: 2.5rem !important;
+}
+
+// PC
+@media (min-width: 992px) {
+    .margin-title {
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+.footer-title {
+    color: #b9b9b9 !important;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+// PC
+@media (min-width: 992px) {
+    .footer-title {
+        font-size: 1.2rem;
+    }
+}
+
+.footer-title:hover {
+    color: #cbcbcb !important;
+}
+
+.footer-subtitles {
+    color: #b9b9b9 !important;
+}
+
+.footer-p {
+    display: none;
+}
+
+// PC
+@media (min-width: 768px) {
+    .footer-p {
+        font-size: 0.9rem;
+        margin-top: 0.85rem;
+        display: block;
+    }
+}
+
+.footer-items {
+    color: #6c757d !important;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase !important;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.footer-items:hover {
+    color: #b9b9b9 !important;
+}
+
+.footer-items--number {
+    @extend.footer-items;
+    font-family: "Manrope", sans-serif;
+}
+
+.small {
+    font-size: 0.65rem !important;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-text__color {
+    color: $cool-pink;
+}
+
+.container__h1 {
+    font-size: 1.4rem;
+}
+
+// PC
+@media (min-width: 992px) {
+    .container__h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.container__h3 {
+    font-size: 1rem;
+}
+
+// PC
+@media (min-width: 992px) {
+    .container__h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/// Override Bootstrap typography variables
+
+$font-family-base: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$headings-font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$headings-font-weight: 800;
