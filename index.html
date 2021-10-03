@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Desde lo más profundo de la cultura Mexicana, llega a sus paladares una comida aunténtica. #OrgulloDeNuestrosAncestros">
+    <meta name="description"
+        content="Desde lo más profundo de la cultura Mexicana, llega a sus paladares una comida aunténtica. #OrgulloDeNuestrosAncestros">
     <meta name="keywords" content="TacoBox Comida Mexicana Tacos Burritos Nachos Tragos Mexico">
 
     <title>TacoBox | Comida Mexicana</title>
@@ -17,14 +18,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet">
     <!--Animation CSS-->
     <link rel="stylesheet" href="./src/css-scss/animate.css">
     <!--Fontello icon-->
     <link rel="stylesheet" href="./src/css-scss/fontello.css">
+    <!-- Toastr Simple Notifications -->
+    <link rel="stylesheet" href="./src/css-scss/toastr.css">
     <!--Style CSS (includes Bootstrap)-->
     <link href="./src/css-scss/styles.css" rel="stylesheet">
 </head>
@@ -39,11 +42,9 @@
         </div>
     </header>
 
-
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container nav-padding center-logo">
+        <div class="container nav-padding">
             <a class="navbar-brand" href="index.html"><img class="responsive-logo" src="./src/assets/img/tacobox.png"
                     alt="Greec X Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -51,21 +52,20 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link nav-link--padding-top" href="index.html">INICIO</a> </li>
-                    <li class="nav-item"><a class="nav-link nav-link--padding-top" href="index.html#menu">MENÚ</a> </li>
-                    <li class="nav-item"><a class="nav-link nav-link--padding-top" href="#!">PROMOCIONES</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#menu">MENÚ</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="#!">RESERVAS</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#locales">LOCALES</a></li>
                     <li class="nav-item--logo"><a class="navbar-brand" href="index.html"><img class="logo"
                                 src="./src/assets/img/tacobox.png" alt="Greec X Logo"></a></li>
-                    <li class="nav-item"><a class="nav-link nav-link--padding-top" href="#!">LOCALES</a> </li>
-                    <li class="nav-item"><a class="nav-link nav-link--padding-top" href="#!">CONTACTO</a> </li>
-                    <li class="nav-item"><a class="nav-link nav-link--padding-top" href="#!">NOSOTROS</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#delivery">DELIVERY</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#take-away">TAKEAWAY</a> </li>
+                    <li class="nav-item"><a class="nav-link nav-link--padding-bottom" href="#contacto" data-bs-toggle="modal" data-bs-target="#contacto">CONTACTO</a> </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
+    <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide carousel-margin" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -76,7 +76,7 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="3500">
+            <div class="carousel-item active" data-bs-interval="5000">
                 <img src="./src/assets/img/carousel1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="5000">
@@ -98,24 +98,42 @@
         </button>
     </div>
 
-
-
-    <!-- Content section 1-->
-    <section>
+    <!-- Content section 1 MOBILE-->
+    <section class="translate-y40">
         <div class="container px-6">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-5">
-                    <div class="p-6"><img class="img-fluid w-90" src="./src/assets/img/section1.png" alt="TacoBox" />
-                    </div>
+            <div class="row gx-5 align-items-center background-color-1">
+                <div class="col-lg-5 z-index-2">
+                    <div class="p-6 flex-center responsive-section-mobile"><img class="img-fluid-responsive w-90"
+                            src="./src/assets/img/section1-mobile11.png" alt="TacoBox" /></div>
+                    <div class="p-6 flex-center responsive-section-pc"><img class="img-fluid-responsive w-90"
+                            src="./src/assets/img/section1.png" alt="TacoBox" /></div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 translate-y-23">
                     <div class="p-5 section">
                         <h1 class="section__title">TACOBOX</h1>
-                        <h4 class="section__h4">#OrgulloDeNuestrosAncestros</h4>
-                        <p class="section__p">Aromas, sabores, colores… un ambiente que inmediatamente te transportará.
-                            <br>Bienvenidos a TacoBox, ¡Bienvenidos a México!.</p>
+                        <h2 class="section__h2">RESTAURANTE</h2>
+                        <div class="section-line">
+                            <h4 class="section-line__h4"><span class="section-line__h4--span">#O</span>RGULLO<span
+                                    class="section-line__h4--span">D</span>E<span
+                                    class="section-line__h4--span">N</span>UESTROS<span
+                                    class="section-line__h4--span">A</span>NCESTROS</h4>
+                            <p class="section-line__p">Aromas, sabores, colores… Un ambiente que inmediatamente te
+                                transportará a México.
+                                <br>¡Bienvenidos a TacoBox!
+                            </p>
+                        </div>
+
+                        <div class="icons">
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/" target="_blank" class="icon-facebook"></a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/" target="_blank" class="icon-instagram"></a>
+                            <!-- WhatsApp -->
+                            <a href="https://www.whatsapp.com/" target="_blank" class="icon-whatsapp"></a>
+                        </div>
+
                         <a href="index.html#menu" class="section__button3">
-                            <button class="btn btn-primary section__button3-style">VER MENÚ</button>
+                            <button class="btn section__button3-style">VER MENÚ</button>
                         </a>
                     </div>
                 </div>
@@ -123,104 +141,162 @@
         </div>
     </section>
 
-    <!-- Content section 2 (MENU) -->
+    <!-- MENU -->
     <section id="menu">
         <div class="container px-6 container2">
-
+            <div class="center-logo pt-5 mb-4"><img class="img-menu" src="./src/assets/img/menu.png" alt="menu tacobox"></div>
+            <p class="responsive-p">Presione sobre la imagen para añadir al carrito.</p>
+                
             <!-- FOOD -->
-            <div class="row gx-5 align-items-center">
-                <h2 class="section__title text-white center-text pt-4 pb-5">MENÚ</h2>
-                <p class="responsive-p">Presione sobre la imagen para añadir al carrito.</p>
-
-                <div class="col-lg-4 contenedor">
-                    <figure>
-                        <img class="img-fluid w-90 overlayinn" src="./src/assets/img/tacos.jpg" alt="Tacos" />
-                        <div class="capa">
-                            <h2 class="text-white center-text pt-4">TACOS</h2>
-                            <p class="pt-2"> Disponibilidad:<br>Carne<br>Pollo<br>Vegano</p>
-                            <a href="index.html#menu">
-                                <button class="btn btn-primary section__button3-style">SELECCIONAR</button>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="col-lg-4 contenedor">
-                    <figure>
-                        <img class="img-fluid w-90 overlayinn" src="./src/assets/img/burritos.jpg" alt="Burritos" />
-                        <div class="capa">
-                            <h2 class="text-white center-text pt-4">BURRITOS</h2>
-                            <p class="pt-2"> Disponibilidad:<br>Carne<br>Pollo<br>Vegano</p>
-                            <a href="index.html#menu">
-                                <button class="btn btn-primary section__button3-style">SELECCIONAR</button>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="col-lg-4 contenedor">
-                    <figure>
-                        <img class="img-fluid w-90 overlayinn" src="./src/assets/img/nachos.jpg"
-                            alt="Nachos con guacamole y queso cheddar" />
-                        <div class="capa">
-                            <h2 class="text-white center-text pt-4">NACHOS</h2>
-                            <p class="pt-2"> Disponibilidad:<br>Con Guacamole<br>Con Queso Cheddar</p>
-                            <a href="index.html#menu">
-                                <button class="btn btn-primary section__button3-style">SELECCIONAR</button>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-
-            </div>
-
-            <!-- DRINKS -->
-            <div class="row gx-5 align-items-center pt-4 pb-3">
-
-                <div class="col-lg-4 contenedor">
-                    <figure>
-                        <img class="img-fluid w-90 overlayinn" src="./src/assets/img/tequila.jpg" alt="Tequila Sunrise" />
-                        <div class="capa">
-                            <h2 class="text-white center-text pt-4">Tequila Sunrise</h2>
-                            <!-- <p class="pt-2"> Disponibilidad:<br>Carne<br>Pollo<br>Vegano</p> -->
-                            <a href="index.html#menu">
-                                <button class="btn btn-primary section__button3-style">SELECCIONAR</button>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="col-lg-4 contenedor">
-                    <figure>
-                        <img class="img-fluid w-90 overlayinn" src="./src/assets/img/margarita.jpg" alt="Margarita Sunset" />
-                        <div class="capa">
-                            <h2 class="text-white center-text pt-4">Margarita Sunset</h2>
-                            <!-- <p class="pt-2"> Disponibilidad:<br>Carne<br>Pollo<br>Vegano</p> -->
-                            <a href="index.html#menu">
-                                <button class="btn btn-primary section__button3-style">SELECCIONAR</button>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="col-lg-4 contenedor">
-                    <figure>
-                        <img class="img-fluid w-90 overlayinn" src="./src/assets/img/michelada.jpg" alt="Michelada" />
-                        <div class="capa">
-                            <h2 class="text-white center-text pt-4">Michelada</h2>
-                            <!-- <p class="pt-2"> Disponibilidad:<br>Carne<br>Pollo<br>Vegano</p> -->
-                            <a href="index.html#menu">
-                                <button class="btn btn-primary section__button3-style">SELECCIONAR</button>
-                            </a>
-                        </div>
-                    </figure>
-                </div>
-            </div>
+            <div id="contenedor-productos" class="row gx-5 align-items-center"></div>
         </div>
     </section>
 
-    <!-- Content section 3 (Promociones)-->
-    <!-- Próximamente -->
+    <!-- Delivery method -->
+    <section class="mt-5">
+        <div class="container px-6 background-color-3">
+            <div id="delivery">
+                <div class="row gx-5 pt-4 pb-4">
+                    <div class="col-lg-12 pt-4 center-text">
+                        <h3 class="titles">DELIVERY</h3>
+                        <a href="https://www.rappi.com.ar/"><img class="mt-4 img-delivery"
+                                src="./src/assets/img/rappi.png" alt="Rappi"></a>
+                    </div>
+                </div>
+
+                <div class="row gx-5 pb-4">
+                    <div class="col-lg-12 center-text">
+                        <a href="https://www.pedidosya.com.ar/"><img class="mt-3 img-delivery"
+                                src="./src/assets/img/pedidos-ya.png" alt="Pedidos Ya"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="take-away" class="row gx-5 pt-4 pb-4">
+                <div class="col-lg-12 center-text">
+                    <h3 class="titles">TAKE AWAY</h3>
+                    <a href="index.html#menu"><img class="mt-4 img-delivery" src="./src/assets/img/pedir-online.png"
+                            alt="Pedir Online Take Away"></a>
+                </div>
+            </div>
+
+            <div class="row gx-5 pt-4 pb-4">
+                <div class="col-lg-12 center-text">
+                    <h3 class="titles">RESERVAS</h3>
+                    <a href="https://www.whatsapp.com/"><img class="mt-4 img-delivery"
+                            src="./src/assets/img/reservar.png" alt="Reservar mesa tacobox"></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Food places -->
+    <section class="mt-5">
+        <div class="container px-6 background-color-4">
+            <div id="locales" class="pt-3">
+                <h3 class="titles-locales pt-4">LOCALES</h3>
+
+                <div class="row gx-5 pt-5 pb-4">
+                    <div class="col-lg-6 pt-4 locales">
+                        <img class="img-fluid-responsive w-50" src="./src/assets/img/local-palermo.png"
+                            alt="Local en Palermo de Tacobox" />
+                    </div>
+                    <div class="col-lg-6 pt-4">
+                        <div class="section-line">
+                            <h4 class="section-line__locales">PALERMO</h4>
+                            <p class="section-line__p">Costa Rica 4600, Palermo, Bs As.<br>
+                                Horarios: Lunes a Domingos de 12 a 02 hs<br>
+                                Tel: +54 9 11 1111-1111
+                            </p>
+                        </div>
+                        <a href="https://goo.gl/maps/1psK6YHKF3pp3uar8" target="_blank" class="locales-button">
+                            <button class="btn locales-button__style">VER MAPA</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row gx-5 pt-5 pb-4">
+                    <div class="col-lg-6 pt-4 locales">
+                        <img class="img-fluid-responsive w-50" src="./src/assets/img/local-recoleta.png"
+                            alt="Local en Recoleta de Tacobox" />
+                    </div>
+                    <div class="col-lg-6 pt-4">
+                        <div class="section-line">
+                            <h4 class="section-line__locales">RECOLETA</h4>
+                            <p class="section-line__p">Av. Callao 2000, Recoleta, Bs As.<br>
+                                Horarios: Lunes a Domingos de 12 a 02 hs<br>
+                                Tel: +54 9 11 1111-1111
+                            </p>
+                        </div>
+                        <a href="https://goo.gl/maps/ueMUAtGAzdH5iT1N7" target="_blank" class="locales-button">
+                            <button class="btn locales-button__style">VER MAPA</button>
+                        </a>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Contact -->
+    <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CONTACTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-icons">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/" target="_blank" class="icon-facebook"></a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/" target="_blank" class="icon-instagram"></a>
+                        <!-- WhatsApp -->
+                        <a href="https://www.whatsapp.com/" target="_blank" class="icon-whatsapp"></a>
+                    </div>
+                    <form class="row g-3 mt-2">
+                        <div class="col-md-12">
+                            <label for="inputState" class="form-label">Motivo de contacto</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Consulta General</option>
+                                <option>Problemas con un pago</option>
+                                <option>Sugerencias</option>            
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Name" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="E-Mail" class="form-label">E-Mail</label>
+                            <input type="email" class="form-control" id="inputMail">
+                        </div>
+                        <div class="col-12">
+                            <label for="Message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="inputMsj" name="message" placeholder="Escriba su mensaje aquí." rows="7"></textarea>
+                        </div>
+                        <div class="col-12 centerM">                            
+                            <button type="reset" class="btn-contact">Eliminar texto</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="submit" class="btn-contact">Enviar mensaje</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart -->
+    <button id="boton-carrito" class="floating-btn"><span id="contadorCarrito">0</span><i class="icon-basket"></i></button>
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>CARRITO</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor"></div>
+            <p class="precioProducto">TOTAL: $<span id="precioTotal"></span></p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted mt-5 pt-3 footer">
@@ -233,10 +309,12 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto margin-title">
                         <!-- Content -->
                         <a href="index.html" class="text-uppercase fw-bold mb-4 footer-title">
-                            <img class="mx-1 pb-1 footer-logo" src="./src/assets/img/tacobox.png" alt="TacoBox Logo">TacoBox
+                            <img class="mx-1 pb-1 footer-logo" src="./src/assets/img/tacobox.png"
+                                alt="TacoBox Logo">TacoBox
                         </a>
                         <p class="footer-p">
-                            Desde lo más profundo de la cultura Mexicana, llega a sus paladares una comida aunténtica. #OrgulloDeNuestrosAncestros
+                            Desde lo más profundo de la cultura Mexicana, llega a sus paladares una comida aunténtica.
+                            #OrgulloDeNuestrosAncestros
                         </p>
                     </div>
 
@@ -255,7 +333,7 @@
                         <p>
                             <a href="#!" class="footer-items">Promociones</a>
                         </p>
-                       
+
                     </div>
 
                     <!-- Grid column -->
@@ -282,10 +360,11 @@
                             Contactanos por
                         </h6>
                         <div>
-                            <a class="icon-whatsapp footer-items footer-items--number" href="#!"> +54 9 11 1111 1111</a>
-                            <a class="icon-instagram footer-items" href="#!"> @TacoBox</a>
-                            <a class="icon-twitter footer-items" href="#!"> @TacoBox</a>
-                            <a class="icon-mail footer-items" href="#!"> Contact@tacobox.com</a>
+                            <a class="icon-facebook footer-items" href="#!" target="_blank"> @TacoBox</a>
+                            <a class="icon-instagram footer-items" href="#!" target="_blank"> @TacoBox</a>
+                            <a class="icon-whatsapp footer-items footer-items--number" href="#!" target="_blank"> +54 9
+                                11 1111 1111</a>
+                            <a class="icon-mail footer-items" href="#!" target="_blank"> Contact@tacobox.com</a>
                         </div>
                     </div>
                 </div>
@@ -297,30 +376,16 @@
         </div>
 
     </footer>
-
-    <!-- Floating btn -->
-    <div class="floating-btn">
-        <input type="checkbox" id="btn-more">
-        <div class="social">
-            <!-- WhatsApp -->
-            <a href="#!" class="icon-whatsapp"></a>
-            <!-- Instagram -->
-            <a href="#!" class="icon-instagram"></a>
-            <!-- Twitter -->
-            <a href="#!" class="icon-twitter"></a>
-            <!-- Gmail -->
-            <a href="#!" class="icon-mail"></a>
-        </div>
-
-        <div class="btn-more" rel="tooltip" title="Contact us">
-            <label for="btn-more" class="icon-plus"></label>
-        </div>
-
-    </div>
-
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Toastr Simple Notifications -->
+    <script src="./js/toastr.min.js"></script>
     <!-- Js -->
+    <script src="./js/stock.js"></script>
+    <script src="./js/modal.js"></script>
     <script src="./js/main.js"></script>
 
 </body>

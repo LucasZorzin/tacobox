@@ -11,50 +11,69 @@
 
 ///Section 1 and 3
 .section__title {
-    text-align: center;
-    margin-top: 18px;
-    margin-left: 0px;
-    font-size: 2rem;
-    font-family: "Manrope", sans-serif;
+    text-align: initial;
+    margin: 28px 0 0 10px;
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    letter-spacing: 1.9px;
+    letter-spacing: 6px;
 }
 
-.section__h4 {
-    margin: 8px 8px 8px 0px;
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-    text-align: center;
+.section__h2 {
+    margin: 0px 8px 8px 13px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
+    text-align: initial;
     text-transform: uppercase;
 }
 
-.section__p {
-    text-align: center;
-    margin: 0 0 0 0;
+.section-line__h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.6rem;
+    font-weight: bolder;
+    margin: 20px 0 0 15px;
+    letter-spacing: 1px;
+}
+
+.section-line__h4--span{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+}
+
+.section-line__p {
+    text-align: initial;
+    margin: 5px 65px 0 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: black;
+    font-size: 0.7rem;
 }
 
 // PC
 @media (min-width: 992px) {
     .section__title {
+        text-align: initial;
+        margin: 28px 0 0 8px;
         font-size: 3rem;
-        font-family: "Manrope", sans-serif;
-        text-align: start;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
         letter-spacing: 2px;
     }
 
-    .section__h4 {
-        margin: 8px 8px 8px 0px;
-        font-family: "Raleway", sans-serif;
+    .section__h2 {
+        margin: 8px 0 8px 10px;
+        font-family: 'Poppins', sans-serif;
         font-weight: 500;
         font-size: 0.8rem;
         text-align: start;
     }
 
-    .section__p {
-        text-align: start;
-        margin: 0px 25px 0px 0px;
-    }
+    // .section__p {
+    //     text-align: start;
+    //     margin: 0px 25px 0px 0px;
+    // }
 }
 
 ///Section 2
@@ -62,11 +81,11 @@
 .section2__title {
     padding-top: 5px;
     font-size: 1.2rem;
-    font-family: "Manrope", sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     color: white;
     /* margin-top: 50px; */
-    font-weight: 500;
+    font-weight: bold;
     margin: 0px 12px 0px 12px;
 }
 
@@ -81,8 +100,9 @@
 
 .responsive-p{
     color: grey;
-    transform: translate(0px, -29px);
     text-align: center;
+    font-size: 0.75rem;
+    margin-top: 10px!important;
 }
 
 // PC
@@ -259,6 +279,45 @@
         font-size: 1.5rem;
     }
 }
+
+.titles{
+    text-align: center;
+    margin: 28px 0 0 8px;
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: white;
+}
+
+.titles-locales{
+    text-align: center;
+    margin: 28px 0 0 8px;
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: black;
+}
+
+.section-line__locales{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 20px 0 0 15px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /// Override Bootstrap typography variables
 

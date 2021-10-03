@@ -10,27 +10,23 @@
   border-color: rgba(0, 0, 0, 0) !important;
 }
 
-.btn-primary:hover {
-  background-color: black;
-  background-image: $boton-background-image-hover2;
+.btn-primary:hover{
+  background-color: $yellow!important;
 }
 
 .btn-style {
   text-transform: uppercase;
   padding: 0.5rem 3rem;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
   border-radius: 0;
-  background-image: $boton-background-image;
-  transition: all .2s!important;
+  transition: all 0.2s !important;
 }
 
 .btn-style:hover {
   transform: scale(1.03, 1.03);
-  background-image: $boton-background-image-hover;
-
 }
 
 /// section 2 button
@@ -46,29 +42,26 @@
 }
 
 .buttons-section2__margin-style {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.8rem;
   padding: 2px 10px 2px 10px;
   color: white;
   border: transparent;
-  background-image: $boton-background-image2;
   border-radius: 0px;
   // margin: 0px 30px 0px 30px;
 }
 
 .buttons-section2__margin-style:hover {
   transform: scale(1.03, 1.03);
-  background-image: $boton-background-image-hover2;
 }
 
 // PC
 @media (min-width: 992px) {
   .buttons-section2__margin-style {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     color: white;
     border: transparent;
-    background-image: $boton-background-image2;
     border-radius: 0px;
     margin: 0px 30px 40px 30px;
     padding: 20px 45px 20px 45px;
@@ -79,6 +72,40 @@
 @media (max-width: 330px) {
   .buttons-section2__margin {
     margin: 5px 8px 5px 8px;
+  }
+}
+
+.btn-primary--style{
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  padding: 5px 30px 5px 30px;
+  margin: 10px 0 10px 0;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255) !important;
+  background-color: #0000003d !important;
+  border-radius: 0px;
+  transition: all 0.3s !important;
+}
+
+.btn-primary--style:hover{
+  border: 2px solid $orange !important;
+  color: white !important;
+  background-color: $orange !important;
+}
+
+// PC
+@media (min-width: 992px) {
+  .btn-primary--style {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    padding: 5px 30px 5px 30px;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: #0000003d !important;
+    border-radius: 0px;
+    position: initial; 
+    margin-top: 4%;
+    transition: all 0.5s !important;
   }
 }
 
@@ -94,23 +121,38 @@
 }
 
 .section__button3-style {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.8rem;
   padding: 5px 30px 5px 30px;
-  color: white;
-  border: 2px solid $orange !important ;
+  color: black;
+  border: 2px solid black !important ;
   border-radius: 0px;
-  margin: 10px 0px 0px 0px;
+  position: absolute;
+  bottom: 11%;
+  transition: all 0.2s !important;
+}
 
-  transition: all .2s!important;
+// PC
+@media (min-width: 992px) {
+  .section__button3-style {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    padding: 5px 30px 5px 30px;
+    color: black;
+    border: 2px solid black !important;
+    border-radius: 0px;
+    position: initial; 
+    margin-top: 4%;
+    margin-left: 1.5%;
+    transition: all 0.2s !important;
+  }
 }
 
 .section__button3-style:hover {
-  color:$orange;
-  font-weight: bold;
+  color: white;
   background-image: none;
-  background-color: white;
-  border: 2px solid $orange !important ;
+  background-color: transparent;
+  border: 2px solid white !important ;
 }
 
 // PC
@@ -156,61 +198,151 @@
   }
 }
 
-.black{
-  background-color:black;
+.black {
+  background-color: black;
 }
 
-// FLOATING BTN
-#btn-more{
-  display:none;
+.icons{
+    display: flex;
+    justify-content: center;
 }
 
-.floating-btn{
-  position:fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1;
+// PC
+@media (min-width: 992px) {
+  .icons{
+    display: flex;
+    justify-content: initial;
+  }
 }
 
-.social a, .icon-plus{
-  display:block;
+.icons a {
   text-decoration: none;
-  background: #1c1c1cf0;
-  color: white;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
-  text-align: center;
+  color: black;
+  border: 1px solid black;
   border-radius: 50%;
-  box-shadow: 0 1px 10px rgba(0,0,0,0.4);
-  transition: all 500ms;
+  padding: 2px 2.5px 2px 2.5px;
+  font-size: 0.7rem;
+  justify-content: center;
+  margin: 7% 8% 0 8%;
+  margin-top: 5vh;
+  transition: all 200ms;
 }
 
-.social a:hover{
-  background: white;
-  // color: #1c1c1cf0;
+.icons a:hover{
+  border-color: white;
+  color: white;
+}
+
+// PC
+@media (min-width: 992px) {
+.icons a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 2px 2.5px 2px 2.5px;
+    font-size: 0.7rem;
+    justify-content: center;
+    margin: 3% 0% 0 1.5%;
+  }
+}
+
+// iPhone x
+@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (max-device-height: 813px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+  .icons a {
+    margin-top: 8vh;
+  }
+}
+
+// Galaxy Fold
+@media only screen and (max-device-width: 300px) and (min-device-height: 650px) and (max-device-height: 680px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+  .icons a {
+    margin-top: 7%;
+  }
+}
+
+//Iphone 5/se
+@media only screen and (max-device-width: 370px) and (max-device-height: 570px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
+  .icons a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 2px 2.5px 2px 2.5px;
+    font-size: 0.6rem;
+    justify-content: center;
+    margin: 7% 8% 0 8%;
+    margin-top: 1.5vh;
+    transition: all 200ms;
+  }
+}
+
+.locales-button{
+  margin: 5px 0px 5px 0px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: start;
+  text-decoration: none;
+}
+
+.locales-button__style{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    padding: 5px 30px 5px 30px;
+    color: black;
+    border: 2px solid black !important;
+    border-radius: 0px;
+    position: initial; 
+    margin-top: 4%;
+    margin-left: 1.5%;
+    transition: all 0.2s !important;
+}
+
+.locales-button__style:hover {
+  color: white;
+  background-image: none;
+  background-color: transparent;
+  border: 2px solid white !important ;
+}
+
+.contact-icons{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icons a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 2px 2.5px 2px 2.5px;
+  font-size: 0.7rem;
+  justify-content: center;
+  margin: 3% 0% 0 1.5%;
+}
+
+.contact-icons a:hover{
+  border-color: $orange;
   color: $orange;
 }
 
-.social a{
-  margin-bottom: -15px;
-  opacity:0;
-  visibility: hidden;
+.btn-contact{
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  padding: 5px 30px 5px 30px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid black !important;
+  border-radius: 0px;
+  position: initial; 
+  margin-top: 4%;
+  margin-left: 1.5%;
+  transition: all 0.2s !important;
 }
 
-#btn-more:checked~ .social a{
-  margin-bottom: 10px;
-  opacity: 1;
-  visibility: visible;
-}
-
-.icon-plus{
-  cursor:pointer;
-  background: $orange;
-  font-size: 23px;
-}
-
-#btn-more:checked~ .btn-more .icon-plus{
-  transform: rotate(137deg);
-  font-size: 25px;
+.btn-contact:hover{
+  border-color: $orange;
+  color: $orange;
 }

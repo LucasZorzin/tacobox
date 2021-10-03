@@ -3,17 +3,11 @@
 //
 
 // Variables
-
-$pink: #ee0979;
-$cool-pink: #aa31bd;
 $orange: #e7801b;
-$boton-background-image: linear-gradient(to bottom, #39004d, #641577, #942ca3, #c844d0, #ff5bfe);
-$boton-background-image-hover: linear-gradient(to bottom, #641577, #942ca3, #c844d0, #c844d0, #ff5bfe);
+$yellow: #ffb607;
+$pink:#c56505;
+$cool-pink: #c56507;
 
-$boton-background-image2: linear-gradient(to top, #39004d, #641577, #942ca3, #c844d0, #ff5bfe);
-$boton-background-image-hover2: linear-gradient(to top, #c844d0, #c844d0, #c844d0, #c844d0, #c844d0);
-
-$floating-btn: linear-gradient(to bottom, #641577, #872698, #ad38ba, #d549dc, #ff5bfe);
 
 $section2: rgb(14, 14, 14);
 $footer: #131313;
@@ -30,15 +24,8 @@ $footer-c: #171819;
 // Override Bootstrap default state colors
 
 $primary: $orange;
-$secondary: $pink;
+$secondary: $yellow;
 
-:root {
-    --bs-blue: #000000!important;
-}
-
-body::selection{
-    background-color: $cool-pink;
-}
 
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.

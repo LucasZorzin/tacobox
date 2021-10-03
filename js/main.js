@@ -1,88 +1,144 @@
-let mensajeBienvenida = "\nTACOBOX\nDesde lo más profundo de la cultura Mexicana, llega a sus paladares una comida aunténtica.";
-alert(mensajeBienvenida);
+let carritoDeCompras = []
 
-let totalComida = 0;
-let arrayComida = '';
+const contenedorProductos = document.getElementById('contenedor-productos');
+const contenedorCarrito = document.getElementById('carrito-contenedor');
 
-function compraComida() {
+const contadorCarrito = document.getElementById('contadorCarrito');
+const precioTotal = document.getElementById('precioTotal');
 
-    
-    let comidaElegida = prompt(`POR FAVOR LEA EL MENÚ Y A CONTINUACIÓN SELECCIONE EL NÚMERO CORRESPONDIENTE A LO QUE DESEE:
-    
-    -COMIDAS-
-    1) Tacos al pastor - $900
-    2) Burritos - $750
-    3) Nachos - $400
+const enJson="";
 
-    -TRAGOS-
-    4) Tequila Sunrise - $300
-    5) Margarita Sunset - $400
-    6) Michelada - $500
+mostrarProductos(stockProductos)
 
+function mostrarProductos(array) {
+    contenedorProductos.innerHTML = '';
+    for (const producto of array) {
+        let div = document.createElement('div');
+        div.classList.add('col-lg-4', 'contenedor', 'pt-3');
+        div.innerHTML += `  <figure>
+                                    <img class="img-fluid w-90 overlayinn" src="${producto.img}" alt="${producto.nombre} - Tacobox" />
+                                    <div class="texto-encima">${producto.nombre} - $${producto.precio}</div>
+                                    <div class="capa">
+                                        <h2 class="text-white center-text pt-4 text-uppercase">${producto.nombre}</h2>
+                                        <p class="pt-2"> ${producto.desc}</p>
+                                        <a id="id-${producto.id}"">
+                                            <button class="btn btn-primary--style">AÑADIR AL CARRITO</button>
+                                        </a>
+                                    </div>
+                            </figure>
+                        `
+        contenedorProductos.appendChild(div);
 
-    (Todos los platos están acompañados con papas y gaseosa).   
-    `)
-    
-    arrayComida = comidaElegida.split(',').map(function(item) {
-        return item.trim();
-    });
+        let boton = document.getElementById(`id-${producto.id}`)
 
-    console.log(arrayComida)
+        // boton.addEventListener('click', ()=>{
+        //     agregarAlCarrito(producto.id);
+        // })
 
-    for (let i = 0; i < arrayComida.length; i++) {
-        
-    
-        switch(parseInt(arrayComida[i])){
-            case 1:
-                totalComida += 900;
-                console.log("900 pesos");
-                break;
-            case 2:
-                totalComida += 750;
-                console.log("750 pesos");
-                break;
-            case 3:
-                totalComida += 400;
-                console.log("400 pesos");
-                break;
-            case 4:
-                totalComida += 300;
-                console.log("300 pesos");
-                break;
-            case 5:
-                totalComida += 400;
-                console.log("400 pesos");
-                break;
-            case 6:
-                totalComida += 500;
-                console.log("500 pesos");
-                break;
-        } 
+        $(document).ready(function () {
+            $(boton).click(function () {
+                agregarAlCarrito(producto.id);
+                toastr["success"](" ", "Producto añadido al carrito!");
+            });
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        })
     }
 
-    
 }
 
-compraComida()
-let preguntaMasComida = prompt("¿Desea pedir algo más? SI o NO")
-let confirmaMasComida = preguntaMasComida.toUpperCase();
 
+function agregarAlCarrito(id) {
+    let repetido = carritoDeCompras.find(prodR => prodR.id == id);
+    if (repetido) {
+        repetido.cantidad = repetido.cantidad + 1;
+        document.getElementById(`cantidad${repetido.id}`).innerHTML = `<p id="cantidad${repetido.id}">cantidad: ${repetido.cantidad}</p>`
+        actualizarCarrito()
+    }
+    else {
+        let productoAgregar = stockProductos.find(prod => prod.id == id);
+        console.log(productoAgregar);
+        carritoDeCompras.push(productoAgregar);
 
-while ((arrayComida != '')&&(confirmaMasComida == "SI")){
-    do{
-        compraComida();
+        productoAgregar.cantidad = 1;
+        actualizarCarrito()
+        let div = document.createElement('div')
+        div.classList.add('productoEnCarrito')
+        div.innerHTML = `<p>${productoAgregar.nombre}</p>
+                        <p>Precio: ${productoAgregar.precio}</p>
+                        <p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>
+                        <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="icon-trash"></i></button>`
+        contenedorCarrito.appendChild(div)
+
+        let botonEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
+
+        botonEliminar.addEventListener('click', () => {
+            botonEliminar.parentElement.remove()
+            carritoDeCompras = carritoDeCompras.filter(prodE => prodE.id != productoAgregar.id)
+            actualizarCarrito()
+        })
+    }
+
+}
+
+function actualizarCarrito() {
+    contadorCarrito.innerText = carritoDeCompras.reduce((acc, el) => acc + el.cantidad, 0);
+    precioTotal.innerText = carritoDeCompras.reduce((acc, el) => acc + (el.precio * el.cantidad), 0);
+    guardarLocalStorage();
+}
+
+function guardarLocalStorage(){
+    localStorage.setItem("carritoGuardado", JSON.stringify(carritoDeCompras))
+}
+
+//Función para obtener del Local Storage el array formado en el carrito.
+function obtenerLocalStorage(){
+    let carritoActualizado = JSON.parse(localStorage.getItem("carritoGuardado")); 
+
+    if(carritoActualizado){
+        carritoActualizado.forEach(el => {
+            carritoDeCompras.push(el)
+            actualizarCarrito()
+
+            let div = document.createElement("div");
+            div.classList.add('productoEnCarrito');
+            div.innerHTML += `<p>${el.nombre}</p>
+            <p>Precio: ${el.precio}</p>
+            <p id="cantidad${el.id}">Cantidad: ${el.cantidad}</p>
+            <button id="eliminar${el.id}" class="boton-eliminar"><i class="icon-trash"></i></button>`
         
-        preguntaMasComida = prompt("Quiere seguir comprando ? Si o No")
-        confirmaMasComida = preguntaMasComida.toUpperCase();
-
-    }while(confirmaMasComida == "SI")
+            contenedorCarrito.appendChild(div);
+            
+            let botonEliminar = document.getElementById (`eliminar${el.id}`);
+        
+            botonEliminar.addEventListener ("click", () => {
+                botonEliminar.parentElement.remove();
+                carritoDeCompras = carritoDeCompras.filter(prodEliminado => prodEliminado.id != el.id);
+                actualizarCarrito();
+                Toastify({
+                    text: "Producto Eliminado",
+                    backgroundColor: "red",
+                    className: "info",
+                  }).showToast();
+            })
+        });
+    }
 }
 
-console.log(`Total Gastado: ${totalComida}`) // para verlo en consola
-
-if (arrayComida != '') {
-alert(`Total Gastado: ${totalComida}`) // visible para el cliente
-}
-
-let mensajeDespedida = "Gracias por visitar nuestra tienda. \n¡Hasta Luego!";
-alert(mensajeDespedida);
+obtenerLocalStorage();
