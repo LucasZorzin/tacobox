@@ -6,8 +6,6 @@ const contenedorCarrito = document.getElementById('carrito-contenedor');
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
 
-const enJson="";
-
 mostrarProductos(stockProductos)
 
 function mostrarProductos(array) {
@@ -21,7 +19,7 @@ function mostrarProductos(array) {
                                     <div class="capa">
                                         <h2 class="text-white center-text pt-4 text-uppercase">${producto.nombre}</h2>
                                         <p class="pt-2"> ${producto.desc}</p>
-                                        <a id="id-${producto.id}"">
+                                        <a id="id-${producto.id}">
                                             <button class="btn btn-primary--style">AÑADIR AL CARRITO</button>
                                         </a>
                                     </div>
@@ -47,7 +45,7 @@ function mostrarProductos(array) {
                 "newestOnTop": false,
                 "progressBar": false,
                 "positionClass": "toast-top-right",
-                "preventDuplicates": false,
+                "preventDuplicates": true,
                 "onclick": null,
                 "showDuration": "300",
                 "hideDuration": "1000",
@@ -92,6 +90,7 @@ function agregarAlCarrito(id) {
             botonEliminar.parentElement.remove()
             carritoDeCompras = carritoDeCompras.filter(prodE => prodE.id != productoAgregar.id)
             actualizarCarrito()
+            toastr["warning"](" ", "Eliminado correctamente!");
         })
     }
 
@@ -131,11 +130,7 @@ function obtenerLocalStorage(){
                 botonEliminar.parentElement.remove();
                 carritoDeCompras = carritoDeCompras.filter(prodEliminado => prodEliminado.id != el.id);
                 actualizarCarrito();
-                Toastify({
-                    text: "Producto Eliminado",
-                    backgroundColor: "red",
-                    className: "info",
-                  }).showToast();
+                toastr["warning"](" ", "Eliminado correctamente!");
             })
         });
     }

@@ -287,6 +287,12 @@
   letter-spacing: 1px;
 }
 
+.reservas {
+  font-family: 'Poppins';
+  font-weight: 100;
+  text-align: center;
+}
+
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11867,7 +11873,7 @@ html, body {
 .btn-style {
   text-transform: uppercase;
   padding: 0.5rem 3rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
@@ -11897,7 +11903,7 @@ html, body {
 }
 
 .buttons-section2__margin-style {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   padding: 2px 10px 2px 10px;
   color: white;
@@ -11912,7 +11918,7 @@ html, body {
 
 @media (min-width: 992px) {
   .buttons-section2__margin-style {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
     color: white;
     border: transparent;
@@ -11929,7 +11935,7 @@ html, body {
 }
 
 .btn-primary--style {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   padding: 5px 30px 5px 30px;
   margin: 10px 0 10px 0;
@@ -11949,7 +11955,7 @@ html, body {
 
 @media (min-width: 992px) {
   .btn-primary--style {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
     padding: 5px 30px 5px 30px;
     color: white;
@@ -11980,7 +11986,7 @@ html, body {
 }
 
 .section__button3-style {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   padding: 5px 30px 5px 30px;
   color: black;
@@ -11994,7 +12000,7 @@ html, body {
 
 @media (min-width: 992px) {
   .section__button3-style {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
     padding: 5px 30px 5px 30px;
     color: black;
@@ -12171,7 +12177,7 @@ html, body {
 }
 
 .locales-button__style {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   padding: 5px 30px 5px 30px;
   color: black;
@@ -12222,7 +12228,7 @@ html, body {
 }
 
 .btn-contact {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   padding: 5px 30px 5px 30px;
   color: black;
@@ -12239,6 +12245,40 @@ html, body {
 .btn-contact:hover {
   border-color: #e7801b;
   color: #e7801b;
+}
+
+.reservas-button {
+  margin: 5px 0px 5px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+}
+
+.reservas-button__style {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  font-size: 0.8rem;
+  padding: 5px 30px 5px 30px;
+  color: black;
+  border: 2px solid black !important;
+  border-radius: 0px;
+  position: initial;
+  margin-top: 4%;
+  margin-left: 1.5%;
+}
+
+.reservas-button__style:hover {
+  background-color: transparent;
+  border: 2px solid #e7801b !important;
 }
 
 .fixed-top {
@@ -12933,7 +12973,7 @@ html, body {
 
 @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (max-device-height: 813px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .img-fluid-responsive {
-    max-width: 93%;
+    max-width: 88%;
     height: auto;
   }
 }
@@ -13306,7 +13346,7 @@ header.masthead-contact .container__logo-size {
   }
 }
 
-@media only screen and (min-device-width: 599px) and (max-device-width: 991px) {
+@media screen and (min-device-width: 500px) and (max-device-width: 991px) and (orientation: landscape) {
   .translate-y40 {
     display: none;
   }
@@ -13573,6 +13613,8 @@ header.masthead-contact .container__logo-size {
   font-size: 17px;
   -webkit-transform: translate(0px, -3px);
           transform: translate(0px, -3px);
+  -webkit-box-shadow: 0px 0px 20px 4px #2c2c2c;
+          box-shadow: 0px 0px 20px 4px #2c2c2c;
 }
 
 .icon-basket:hover {
@@ -13582,11 +13624,22 @@ header.masthead-contact .container__logo-size {
 
 #boton-carrito {
   border: none;
-  color: #ffb607;
+  color: #000000;
   font-family: "Poppins";
   text-align: end;
-  font-size: 1rem;
+  font-size: 0.7rem;
   background-color: #ffffff00;
+}
+
+#contadorCarrito {
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  padding: 0 4px 0 4.2px;
+  z-index: 2;
+  position: fixed;
+  right: 12px;
+  bottom: 42px;
 }
 
 #boton-carrito:focus {
@@ -13697,6 +13750,7 @@ select {
 .modal-carrito .precioProducto {
   padding-top: 10px;
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 .card .card-image .card-title {
