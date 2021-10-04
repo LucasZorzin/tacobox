@@ -12973,7 +12973,7 @@ html, body {
 
 @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (max-device-height: 813px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .img-fluid-responsive {
-    max-width: 88%;
+    max-width: 80%;
     height: auto;
   }
 }
@@ -13352,6 +13352,12 @@ header.masthead-contact .container__logo-size {
   }
 }
 
+@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (max-device-height: 813px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .translate-y40 {
+    display: none;
+  }
+}
+
 @media (min-width: 992px) {
   .translate-y40 {
     -webkit-transform: translate(0px, 40px);
@@ -13601,8 +13607,8 @@ header.masthead-contact .container__logo-size {
   line-height: 47px;
   text-align: center;
   border-radius: 50%;
-  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 5px #2c2c2c99;
+          box-shadow: 0 0 5px #2c2c2c99;
   -webkit-transition: all 500ms;
   transition: all 500ms;
 }

@@ -86,6 +86,13 @@
     }
 }
 
+// iPhone x
+@media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (max-device-height: 813px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .translate-y40{
+        display:none;
+    }
+}
+
 // PC
 @media (min-width: 992px) {
     .translate-y40{
