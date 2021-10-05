@@ -12960,7 +12960,7 @@ html, body {
 }
 
 .img-fluid-responsive {
-  max-width: 78%;
+  max-width: 73%;
   height: auto;
 }
 
@@ -13347,6 +13347,12 @@ header.masthead-contact .container__logo-size {
 }
 
 @media screen and (min-device-width: 500px) and (max-device-width: 991px) and (orientation: landscape) {
+  .translate-y40 {
+    display: none;
+  }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 991px) {
   .translate-y40 {
     display: none;
   }
