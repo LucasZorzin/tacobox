@@ -9,7 +9,8 @@ const precioTotal = document.getElementById('precioTotal');
 mostrarProductos(stockProductos)
 
 function mostrarProductos(array) {
-    contenedorProductos.innerHTML = '';
+    $('#contenedor-productos').append ='';
+    // contenedorProductos.innerHTML = '';
     for (const producto of array) {
         let div = document.createElement('div');
         div.classList.add('col-lg-4', 'contenedor', 'pt-3');
@@ -25,7 +26,8 @@ function mostrarProductos(array) {
                                     </div>
                             </figure>
                         `
-        contenedorProductos.appendChild(div);
+        // contenedorProductos.appendChild(div);
+        $('#contenedor-productos').append(div);
 
         let boton = document.getElementById(`id-${producto.id}`)
 
@@ -36,7 +38,7 @@ function mostrarProductos(array) {
         $(document).ready(function () {
             $(boton).click(function () {
                 agregarAlCarrito(producto.id);
-                toastr["success"](" ", "Producto añadido al carrito!");
+                toastr["success"](" ", `${producto.nombre} añadido al carrito!`);
             });
 
             toastr.options = {
@@ -45,11 +47,11 @@ function mostrarProductos(array) {
                 "newestOnTop": false,
                 "progressBar": false,
                 "positionClass": "toast-top-right",
-                "preventDuplicates": true,
+                "preventDuplicates": false,
                 "onclick": null,
                 "showDuration": "300",
                 "hideDuration": "1000",
-                "timeOut": "5000",
+                "timeOut": "1500",
                 "extendedTimeOut": "1000",
                 "showEasing": "swing",
                 "hideEasing": "linear",
@@ -66,7 +68,7 @@ function agregarAlCarrito(id) {
     let repetido = carritoDeCompras.find(prodR => prodR.id == id);
     if (repetido) {
         repetido.cantidad = repetido.cantidad + 1;
-        document.getElementById(`cantidad${repetido.id}`).innerHTML = `<p id="cantidad${repetido.id}">cantidad: ${repetido.cantidad}</p>`
+        document.getElementById(`cantidad${repetido.id}`).innerHTML = `<p id="cantidad${repetido.id}">Cantidad: ${repetido.cantidad}</p>`
         actualizarCarrito()
     }
     else {
@@ -77,11 +79,19 @@ function agregarAlCarrito(id) {
         productoAgregar.cantidad = 1;
         actualizarCarrito()
         let div = document.createElement('div')
-        div.classList.add('productoEnCarrito')
-        div.innerHTML = `<p>${productoAgregar.nombre}</p>
-                        <p>Precio: ${productoAgregar.precio}</p>
-                        <p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>
-                        <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="icon-trash"></i></button>`
+        div.classList.add('productoEnCarrito' , 'row')
+        div.innerHTML = `
+                        <div class="col-3 z-index-3">
+                        <p>${productoAgregar.nombre}</p>
+                        </div>
+                        <div class="col-3 z-index-3">
+                            <p>Precio: $${productoAgregar.precio}</p>
+                        </div>
+                        <div class="col-3 z-index-3">
+                            <p id="cantidad${productoAgregar.id}">Cantidad: ${productoAgregar.cantidad}</p>
+                        </div>
+                        <button id="eliminar${productoAgregar.id}" class="col-3 boton-eliminar"><i class="icon-trash"></i></button>
+                        `
         contenedorCarrito.appendChild(div)
 
         let botonEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
@@ -106,7 +116,6 @@ function guardarLocalStorage(){
     localStorage.setItem("carritoGuardado", JSON.stringify(carritoDeCompras))
 }
 
-//Función para obtener del Local Storage el array formado en el carrito.
 function obtenerLocalStorage(){
     let carritoActualizado = JSON.parse(localStorage.getItem("carritoGuardado")); 
 
@@ -116,11 +125,19 @@ function obtenerLocalStorage(){
             actualizarCarrito()
 
             let div = document.createElement("div");
-            div.classList.add('productoEnCarrito');
-            div.innerHTML += `<p>${el.nombre}</p>
-            <p>Precio: ${el.precio}</p>
-            <p id="cantidad${el.id}">Cantidad: ${el.cantidad}</p>
-            <button id="eliminar${el.id}" class="boton-eliminar"><i class="icon-trash"></i></button>`
+            div.classList.add('productoEnCarrito' , 'row');
+            div.innerHTML += `
+                                <div class="col-3 z-index-3">
+                                <p>${el.nombre}</p>
+                                </div>
+                                <div class="col-3 z-index-3">
+                                    <p>Precio: $${el.precio}</p>
+                                </div>
+                                <div class="col-3 z-index-3">
+                                    <p id="cantidad${el.id}">Cantidad: ${el.cantidad}</p>
+                                </div>
+                                <button id="eliminar${el.id}" class="col-3 boton-eliminar"><i class="icon-trash"></i></button>
+                            `
         
             contenedorCarrito.appendChild(div);
             

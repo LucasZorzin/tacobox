@@ -102,11 +102,11 @@ select {
     opacity: 1;
     visibility: visible;
     z-index: 5;
-    margin-top: 10vh;
-    max-height: 90vh;
+    padding-top: 10vh;
+    max-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    overflow-x: scroll;
+    overflow-y: overlay !important;
 }
 
 .modal-carrito {
@@ -163,9 +163,7 @@ select {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     margin: 5px 0;
-    padding: 5px 10px;
     display: flex;
-    justify-content: space-between;
     font-family: 'Poppins', sans-serif;
 }
 .productoEnCarrito:hover {
@@ -177,6 +175,7 @@ select {
     color: $yellow;
     border: none;
     font-size: 20px;
+    transform: translate(0px, -10px);
 }
 
 .boton-eliminar:hover {

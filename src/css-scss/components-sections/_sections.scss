@@ -114,6 +114,27 @@
     height: 45vh;
 }
 
+.z-index-3{
+    z-index: 3;
+    font-size: 0.8rem;
+}
+
+// Narrow screens
+@media (max-width: 340px) {
+    .z-index-3{
+        z-index: 3;
+        font-size: 0.64rem;
+    }
+}
+
+// PC
+@media (min-width: 500px) {
+    .z-index-3{
+        z-index: 3;
+        font-size: 1rem;
+    }
+}
+
 // incompatible resolutions
 @media only screen and (min-device-width: 465px) and (max-device-width: 599px) and (min-device-height: 1px) and (max-device-height: 820px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  {
     .z-index-2{
