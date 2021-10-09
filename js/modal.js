@@ -1,20 +1,16 @@
 const contenedorModal = $('.modal-contenedor')[0];
-// const body= document.getElementById('page-top');
-
-let check=''; //para consulta
+let check='';
 
 $('#boton-carrito').click ( ()=> {
     contenedorModal.classList.toggle('modal-active');
-    // body.classList.toggle('modal-open');
-    check='true'; //para consulta
-    classCheck ();
+    check='true';
+    scrollCheck ();
 })
 
 $('#carritoCerrar').click ( ()=> {
     contenedorModal.classList.toggle('modal-active');
-    // body.classList.remove('modal-open');
-    check='false'; //para consulta
-    classCheck ();
+    check='false';
+    scrollCheck ();
 })
 
 $('.modal-carrito').click ( (e)=>{
@@ -26,17 +22,15 @@ $('.modal-contenedor').click ( ()=>{
 })
 
 
-//consulta
-const htmlScroll= document.getElementsByTagName('html');
-function classCheck (){
+function scrollCheck (){
     if (check==='true') {
         //// Desactiva scroll:
-        // htmlScroll.style.overflow = "hidden";
-        console.log("propiedad 'overflow: hidden' en la etiqueta <html> ACTIVADA");
+        $('html, body').css({"overflow":"hidden"});
+        // console.log("propiedad 'overflow: hidden' en la etiqueta <html> ACTIVADA");
     }
     else if (check==='false'){
         //// Activa scroll:
-        // htmlScroll.style.overflow = "auto";
-        console.log("propiedad 'overflow: hidden' en la etiqueta <html> DESACTIVADA");
+        $('html, body').css({"overflow":"auto"});
+        // console.log("propiedad 'overflow: hidden' en la etiqueta <html> DESACTIVADA");
     }
 }
