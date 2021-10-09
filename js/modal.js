@@ -1,18 +1,42 @@
-const carritoAbrir = document.getElementById('boton-carrito');
-const carritoCerrar = document.getElementById('carritoCerrar');
+const contenedorModal = $('.modal-contenedor')[0];
+// const body= document.getElementById('page-top');
 
-const contenedorModal = document.getElementsByClassName('modal-contenedor')[0]
-const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
+let check=''; //para consulta
 
-carritoAbrir.addEventListener('click', ()=> {
-    contenedorModal.classList.toggle('modal-active')
+$('#boton-carrito').click ( ()=> {
+    contenedorModal.classList.toggle('modal-active');
+    // body.classList.toggle('modal-open');
+    check='true'; //para consulta
+    classCheck ();
 })
-carritoCerrar.addEventListener('click', ()=> {
-    contenedorModal.classList.toggle('modal-active')
+
+$('#carritoCerrar').click ( ()=> {
+    contenedorModal.classList.toggle('modal-active');
+    // body.classList.remove('modal-open');
+    check='false'; //para consulta
+    classCheck ();
 })
-modalCarrito.addEventListener('click',(e)=>{
-    e.stopPropagation()
+
+$('.modal-carrito').click ( (e)=>{
+    e.stopPropagation();
 })
-contenedorModal.addEventListener('click', ()=>{
-    carritoCerrar.click()
+
+$('.modal-contenedor').click ( ()=>{
+    $('#carritoCerrar').trigger("click");
 })
+
+
+//consulta
+const htmlScroll= document.getElementsByTagName('html');
+function classCheck (){
+    if (check==='true') {
+        //// Desactiva scroll:
+        // htmlScroll.style.overflow = "hidden";
+        console.log("propiedad 'overflow: hidden' en la etiqueta <html> ACTIVADA");
+    }
+    else if (check==='false'){
+        //// Activa scroll:
+        // htmlScroll.style.overflow = "auto";
+        console.log("propiedad 'overflow: hidden' en la etiqueta <html> DESACTIVADA");
+    }
+}
