@@ -1,20 +1,25 @@
-let carritoDeCompras = []
+let carritoDeCompras = [];
 
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarrito = document.getElementById('carrito-contenedor');
 
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
+const URLJSON = "./src/data/stock.json";
 
-mostrarProductos(stockProductos)
+mostrarProductos()
 
-function mostrarProductos(array) {
-    $('#contenedor-productos').append ='';
+function mostrarProductos() {
+    $('#contenedor-productos').append = '';
     // contenedorProductos.innerHTML = '';
-    for (const producto of array) {
-        let div = document.createElement('div');
-        div.classList.add('col-lg-4', 'contenedor', 'pt-3');
-        div.innerHTML += `  <figure>
+
+    $.getJSON(URLJSON, function (respuesta, estado) {
+        if (estado === "success") {
+            let misProductos = respuesta;
+            for (const producto of misProductos) {
+                let div = document.createElement('div');
+                div.classList.add('col-lg-4', 'contenedor', 'pt-3');
+                div.innerHTML += `  <figure>
                                     <img class="img-fluid w-90 overlayinn" src="${producto.img}" alt="${producto.nombre} - Tacobox" />
                                     <div class="texto-encima">${producto.nombre} - $${producto.precio}</div>
                                     <div class="capa">
@@ -26,43 +31,39 @@ function mostrarProductos(array) {
                                     </div>
                             </figure>
                         `
-        // contenedorProductos.appendChild(div);
-        $('#contenedor-productos').append(div);
+                // contenedorProductos.appendChild(div);
+                $('#contenedor-productos').append(div);
 
-        let boton = document.getElementById(`id-${producto.id}`)
+                let boton = document.getElementById(`id-${producto.id}`)
 
-        // boton.addEventListener('click', ()=>{
-        //     agregarAlCarrito(producto.id);
-        // })
+                $(document).ready(function () {
+                    $(boton).click(function () {
+                        agregarAlCarrito(producto.id);
+                        toastr["success"](" ", `${producto.nombre} añadido al carrito!`);
+                    });
 
-        $(document).ready(function () {
-            $(boton).click(function () {
-                agregarAlCarrito(producto.id);
-                toastr["success"](" ", `${producto.nombre} añadido al carrito!`);
-            });
-
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-right",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "1500",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": false,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "1500",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+                })
             }
-        })
-    }
-
+        }
+    })
 }
-
 
 function agregarAlCarrito(id) {
     let repetido = carritoDeCompras.find(prodR => prodR.id == id);
@@ -72,15 +73,19 @@ function agregarAlCarrito(id) {
         actualizarCarrito()
     }
     else {
-        let productoAgregar = stockProductos.find(prod => prod.id == id);
-        console.log(productoAgregar);
-        carritoDeCompras.push(productoAgregar);
+        $.getJSON(URLJSON, function (respuesta, estado) {
+            if (estado === "success") {
+                let misProductos = respuesta;
+                let productoAgregar = misProductos.find(prod => prod.id == id)
+                console.log(productoAgregar);
+                carritoDeCompras.push(productoAgregar);
+                productoAgregar.cantidad = 1;
 
-        productoAgregar.cantidad = 1;
-        actualizarCarrito()
-        let div = document.createElement('div')
-        div.classList.add('productoEnCarrito' , 'row')
-        div.innerHTML = `
+                actualizarCarrito()
+
+                let div = document.createElement('div')
+                div.classList.add('productoEnCarrito', 'row')
+                div.innerHTML = `
                         <div class="col-3 z-index-3">
                         <p>${productoAgregar.nombre}</p>
                         </div>
@@ -92,18 +97,20 @@ function agregarAlCarrito(id) {
                         </div>
                         <button id="eliminar${productoAgregar.id}" class="col-3 boton-eliminar"><i class="icon-trash"></i></button>
                         `
-        contenedorCarrito.appendChild(div)
+                contenedorCarrito.appendChild(div)
 
-        let botonEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
+                let botonEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
 
-        botonEliminar.addEventListener('click', () => {
-            botonEliminar.parentElement.remove()
-            carritoDeCompras = carritoDeCompras.filter(prodE => prodE.id != productoAgregar.id)
-            actualizarCarrito()
-            toastr["warning"](" ", "Eliminado correctamente!");
-        })
+                botonEliminar.addEventListener('click', () => {
+                    botonEliminar.parentElement.remove()
+                    carritoDeCompras = carritoDeCompras.filter(prodE => prodE.id != productoAgregar.id)
+                    actualizarCarrito()
+                    toastr["warning"](" ", "Eliminado correctamente!");
+                })
+
+            }
+        });
     }
-
 }
 
 function actualizarCarrito() {
@@ -112,20 +119,20 @@ function actualizarCarrito() {
     guardarLocalStorage();
 }
 
-function guardarLocalStorage(){
+function guardarLocalStorage() {
     localStorage.setItem("carritoGuardado", JSON.stringify(carritoDeCompras))
 }
 
-function obtenerLocalStorage(){
-    let carritoActualizado = JSON.parse(localStorage.getItem("carritoGuardado")); 
+function obtenerLocalStorage() {
+    let carritoActualizado = JSON.parse(localStorage.getItem("carritoGuardado"));
 
-    if(carritoActualizado){
+    if (carritoActualizado) {
         carritoActualizado.forEach(el => {
             carritoDeCompras.push(el)
             actualizarCarrito()
 
             let div = document.createElement("div");
-            div.classList.add('productoEnCarrito' , 'row');
+            div.classList.add('productoEnCarrito', 'row');
             div.innerHTML += `
                                 <div class="col-3 z-index-3">
                                 <p>${el.nombre}</p>
@@ -138,12 +145,12 @@ function obtenerLocalStorage(){
                                 </div>
                                 <button id="eliminar${el.id}" class="col-3 boton-eliminar"><i class="icon-trash"></i></button>
                             `
-        
+
             contenedorCarrito.appendChild(div);
-            
-            let botonEliminar = document.getElementById (`eliminar${el.id}`);
-        
-            botonEliminar.addEventListener ("click", () => {
+
+            let botonEliminar = document.getElementById(`eliminar${el.id}`);
+
+            botonEliminar.addEventListener("click", () => {
                 botonEliminar.parentElement.remove();
                 carritoDeCompras = carritoDeCompras.filter(prodEliminado => prodEliminado.id != el.id);
                 actualizarCarrito();

@@ -51,8 +51,6 @@ body {
     background-color: #f4f4f4;
 }
 
-body.modal-open {
-    overflow-y: hidden;
-    position:fixed;
-    width: 100%;
+.modal-open{
+    padding-right: 0!important;
 }

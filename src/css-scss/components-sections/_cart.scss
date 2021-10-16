@@ -29,7 +29,7 @@
     background: #111111;
     font-size: 17px;
     transform: translate(0px, -3px);
-    box-shadow: 0px 0px 5px 1px #2c2c2c99;
+    box-shadow: 0px 0px 5px 3px #2c2c2c99;
 }
 
 .icon-basket:hover {
@@ -52,8 +52,15 @@
     padding: 0 4px 0 4.2px;
     z-index: 2;
     position: fixed;
-    right: 12px;
+    right: 17px;
     bottom: 42px;
+}
+
+// PC
+@media (min-width: 768px) {
+    #contadorCarrito{
+        right: 13px;
+    }
 }
 
 #boton-carrito:focus {

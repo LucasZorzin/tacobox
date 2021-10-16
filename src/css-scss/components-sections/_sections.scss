@@ -36,7 +36,7 @@
 // PC
 @media (min-width: 992px) {
     .background-color-1{
-        background-color: #ffb607;
+        background-color: $yellow;
         padding-bottom: 5%;
     }
 }
@@ -51,7 +51,7 @@
 }
 
 .translate-y-23{
-    background-color: #ffb607;
+    background-color: $yellow;
     transform: translate(0px, -23px);
     height: 55vh;
 }
@@ -59,7 +59,7 @@
 // PC
 @media (min-width: 992px) {
     .translate-y-23{
-        background-color: #ffb607;
+        background-color: $yellow;
         transform: translate(0, 0);
         height: 55vh;
         display: flex;
@@ -75,7 +75,7 @@
 // iPad pro
 @media only screen and (min-device-width: 1000px) and (max-device-width: 1030px) and (min-device-height: 1300px) and (max-device-height: 1370px){
     .translate-y40{
-        display:none;
+        display:none !important;
     }
 }
 
@@ -87,11 +87,12 @@
 }
 
 // Tablet
-@media screen and (min-device-width: 500px) and (max-device-width: 991px) {
+@media screen and (min-device-width: 500px) and (max-device-width: 1991px) {
     .translate-y40{
         display:none;
     }
 }
+
 
 // iPhone x
 @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (max-device-height: 813px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -103,9 +104,14 @@
 // PC
 @media (min-width: 992px) {
     .translate-y40{
-        transform: translate(0px, 40px);
+        transform: translate(0px, 0px);
         height: initial;
         padding-bottom: 2.5%;
+        background-color: $yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
     }
 }
 
@@ -180,6 +186,28 @@
 
 }
 
+#menu{
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transform: translate(0,0);
+}
+
+// iPad pro
+@media only screen and (min-device-width: 1000px) and (max-device-width: 1030px) and (min-device-height: 1300px) and (max-device-height: 1370px){
+    #menu{
+        background-color: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: initial;
+        transform: translate(0,0);
+    }
+}
+
+
 .container2{
     background-color:#1f1f1f;
     margin-top: 50px;
@@ -187,6 +215,14 @@
 }
 
 //delivery method
+
+#delivery-method{
+    background-color: $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
 .background-color-3{
     background-color: $orange;
@@ -211,3 +247,12 @@
     padding-bottom: 5%;
 }
 
+//food places
+
+#food-places{
+    background-color: $yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
