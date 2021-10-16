@@ -22,4 +22,8 @@
 @import "./components-sections/_requirements.scss";
 @import "./components-sections/_information.scss";
 @import "./components-sections/_cart.scss";
+@import "./components-sections/_loader.scss";
 
+#body-animation {
+    display:none;
+}

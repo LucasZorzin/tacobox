@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Desde lo más profundo de la cultura Mexicana, llega a sus paladares una comida aunténtica. #OrgulloDeNuestrosAncestros">
     <meta name="keywords" content="TacoBox Comida Mexicana Tacos Burritos Nachos Tragos Mexico">
+    <meta name="author" content="lucaszorzincml@gmail.com">
     <title>TacoBox | Comida Mexicana</title>
 
+    <link rel="canonical" href="https://lucaszorzin.github.io/tacobox/index.html">
     <!-- Page Icon -->
     <link rel="icon" type="image/x-icon" href="./src/assets/img/tacobox.png">
     <!--Google fonts-->
@@ -23,8 +25,7 @@
     <link href="./src/css-scss/styles.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
-
+<body>
     <!-- Header-->
     <header class="header-bar">
         <div style="height: 20px;">
@@ -52,6 +53,11 @@
         </div>
     </nav>
 
+    <div id="loader">
+        <img class="loader__img" src="./src/assets/img/loader.gif" alt="TACOBOX">
+    </div>
+
+<div id="body-animation">
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide carousel-margin" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -60,7 +66,7 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
+            <div class="carousel-item active" data-bs-interval="3900">
                 <img src="./src/assets/img/carousel1.jpg" class="d-block w-100" alt="tacobox">
             </div>
             <div class="carousel-item" data-bs-interval="5000">
@@ -125,7 +131,7 @@
     <!-- MENU -->
     <section id="menu">
         <div class="container px-6 container2">
-            <div class="center-logo pt-5 mb-4"><img class="img-menu" src="./src/assets/img/menu.png" alt="menu tacobox"></div>
+            <div class="center-logo pt-2 mb-4"><img class="img-menu" src="./src/assets/img/menu.png" alt="menu tacobox"></div>
             <p class="responsive-p">Presione sobre la imagen para añadir al carrito.</p>
                 
             <!-- FOOD -->
@@ -134,7 +140,7 @@
     </section>
 
     <!-- Delivery method -->
-    <section class="mt-5">
+    <section id="delivery-method">
         <div class="container px-6 background-color-3">
             <div id="delivery">
                 <div class="row gx-5 pt-4 pb-4">
@@ -164,7 +170,7 @@
             <div class="row gx-5 pt-4 pb-4">
                 <div class="col-lg-12 center-text">
                     <h3 class="titles">RESERVAS</h3>
-                    <a href="https://www.whatsapp.com/"><img class="mt-4 img-delivery"
+                    <a href="#reservas" data-bs-toggle="modal" data-bs-target="#reservas"><img class="mt-4 img-delivery"
                             src="./src/assets/img/reservar.png" alt="Reservar mesa tacobox"></a>
                 </div>
             </div>
@@ -173,7 +179,7 @@
     </section>
 
     <!-- Food places -->
-    <section class="mt-5">
+    <section id="food-places">
         <div class="container px-6 background-color-4">
             <div id="locales" class="pt-3">
                 <h3 class="titles-locales pt-4">LOCALES</h3>
@@ -258,9 +264,7 @@
                             <textarea class="form-control" id="inputMsj" name="message"
                                 placeholder="Escriba su mensaje aquí." rows="7"></textarea>
                         </div>
-                        <div class="col-12 centerM">
-                            <button type="reset" class="btn-contact">Eliminar texto</button>
-                        </div>
+                        
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -303,7 +307,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted mt-5 pt-3 footer">
+    <footer class="text-center text-lg-start bg-light text-muted pt-4 pt-3 footer">
         <!-- Section: Links  -->
         <section>
             <div class="container text-center text-md-start mt-5">
@@ -380,6 +384,7 @@
         </div>
 
     </footer>
+</div>
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -388,7 +393,7 @@
     <!-- Toastr Simple Notifications -->
     <script src="./js/toastr.min.js"></script>
     <!-- Js -->
-    <script src="./js/stock.js"></script>
+    <script src="./js/loader.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/main.js"></script>
 
