@@ -13986,6 +13986,7 @@ select {
 .translate-boton-eliminar {
   -webkit-transform: translate(-10px, -10px);
           transform: translate(-10px, -10px);
+  z-index: 15;
 }
 
 .modal-contenedor2 {
