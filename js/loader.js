@@ -1,11 +1,23 @@
-// Initial animation
+// Initial Loader Animation
 
-window.onload = ()=> {
-    var contenedor=$("#loader")[0];
+window.onload = () => {
+    const contenedor = $("#loader")[0];
     contenedor.style.visibility = 'hidden';
 }
 
-$(document).ready(()=> {
-    $.fx.speeds.xslow = 3100;
+$(document).ready(() => {
+    $.fx.speeds.xslow = 2300;
     $("#body-animation").fadeIn("xslow");
+})
+
+//Section delivery-method on-click
+$('#delivery-nav').click(() => {
+    $('#delivery')[0].classList.toggle("titles-active");
+    setTimeout(()=>{$('#delivery')[0].classList.toggle("titles-inactive");},1200);
+})
+
+$('#take-away-nav').click(() => {
+
+    $('#take-away')[0].classList.toggle("titles-active");
+    setTimeout(()=>{$('#take-away')[0].classList.toggle("titles-inactive");},1200);
 })

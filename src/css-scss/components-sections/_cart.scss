@@ -1,4 +1,4 @@
-// FLOATING CART
+//// Cart
 #btn-more {
     display: none;
 }
@@ -45,7 +45,7 @@
     background-color: #ffffff00;
 }
 
-#contadorCarrito{
+#contadorCarrito {
     background-color: white;
     color: black;
     border-radius: 50%;
@@ -58,8 +58,19 @@
 
 // PC
 @media (min-width: 768px) {
-    #contadorCarrito{
+    #contadorCarrito {
         right: 13px;
+    }
+}
+
+#carrito-contenedor {
+    transform: translate(-7px, 0);
+}
+
+// PC
+@media (min-width: 768px) {
+    #carrito-contenedor {
+        transform: translate(0, 0);
     }
 }
 
@@ -157,8 +168,9 @@ select {
 }
 .modal-carrito .precioProducto {
     padding-top: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
+    margin: 5% 0 7% 0;
 }
 .card .card-image .card-title {
     color: $orange;
@@ -171,7 +183,7 @@ select {
     border-top-left-radius: 3px;
     margin: 5px 0;
     display: flex;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 .productoEnCarrito:hover {
     border-left: 5px solid $orange;
@@ -187,8 +199,76 @@ select {
 
 .boton-eliminar:hover {
     cursor: pointer;
-    color:$orange;
+    color: $orange;
 }
 .boton-eliminar:focus {
+    outline: none;
+}
+
+////Checkout
+
+.modal-contenedor2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-carrito2 {
+    position: relative;
+    background-color: white;
+    min-width: 100%;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all 0.5s;
+}
+
+.modal-active2 {
+    opacity: 1;
+    visibility: visible;
+    z-index: 7;
+    padding-top: 10vh;
+    max-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: overlay !important;
+}
+
+// PC
+@media (min-width: 768px) {
+    .modal-carrito2 {
+        min-width: 50%;
+    }
+}
+
+.modal-active2 .modal-carrito2 {
+    margin-top: 0;
+}
+
+.modal-carrito2 h3 {
+    color: $orange;
+    padding-bottom: 5px;
+}
+
+.modal-carrito2 #carritoCerrar2 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: $orange;
+    border: none;
+    background-color: white;
+}
+.modal-carrito2 #carritoCerrar2:hover {
+    cursor: pointer;
+}
+.modal-carrito2 #carritoCerrar2:focus {
     outline: none;
 }

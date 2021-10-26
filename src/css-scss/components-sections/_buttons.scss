@@ -331,8 +331,7 @@
 }
 
 .btn-contact:hover {
-  border-color: $orange;
-  color: $orange;
+  border: 2px solid $orange !important;
 }
 
 .reservas-button {
@@ -361,3 +360,46 @@
   background-color: transparent;
   border: 2px solid $orange !important ;
 }
+
+//Cart
+.cart-btn{
+cursor: pointer;
+font-family: "Poppins", sans-serif;
+font-size: 0.8rem;
+padding: 0;
+color: white;
+margin: 7% 0 7% 0;
+background-color: $orange;
+border: 2px solid $orange !important;
+transform: translate(-10px, 0px);
+display: none;
+transition: all 300ms;
+}
+
+.no-translate{
+  transform: translate(0, 0);
+}
+
+.cart-btn:hover{
+  background-color: $yellow;
+  border: 2px solid $yellow !important;
+}
+
+//Checkout
+.checkout-btn{
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  padding: 0;
+  color: white;
+  background-color: $orange;
+  border: 2px solid $orange !important;
+  margin: auto;
+  margin-top: 2%;
+  transition: all 300ms;
+  }
+
+  .checkout-btn:hover{
+    background-color: $yellow;
+    border: 2px solid $yellow !important;
+  }
