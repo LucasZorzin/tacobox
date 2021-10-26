@@ -99,7 +99,7 @@ function agregarAlCarrito(id) {
                         </div>
                         <button id="botonAdd${productoAgregar.id}" class="col-1 boton-eliminar">+</button>
                         <button id="botonSubtract${productoAgregar.id}" class="col-1 boton-eliminar">-</button>
-                        <button id="eliminar${productoAgregar.id}" class="col-1 boton-eliminar"><i class="icon-trash"></i></button>
+                        <button id="eliminar${productoAgregar.id}" class="col-1 boton-eliminar translate-boton-eliminar"><i class="icon-trash"></i></button>
                         `
                 contenedorCarrito.appendChild(div)
 
@@ -195,7 +195,7 @@ function obtenerLocalStorage() {
                                 </div>
                                 <button id="botonAdd${el.id}" class="col-1 boton-eliminar">+</button>
                                 <button id="botonSubtract${el.id}" class="col-1 boton-eliminar">-</button>
-                                <button id="eliminar${el.id}" class="col-1 boton-eliminar"><i class="icon-trash"></i></button>
+                                <button id="eliminar${el.id}" class="col-1 boton-eliminar translate-boton-eliminar"><i class="icon-trash"></i></button>
                             `
 
             contenedorCarrito.appendChild(div);

@@ -194,7 +194,7 @@ select {
     color: $yellow;
     border: none;
     font-size: 20px;
-    transform: translate(0px, -10px);
+    transform: translate(-2px, -10px);
 }
 
 .boton-eliminar:hover {
@@ -204,6 +204,11 @@ select {
 .boton-eliminar:focus {
     outline: none;
 }
+
+.translate-boton-eliminar{
+    transform: translate(-10px, -10px);
+}
+
 
 ////Checkout
 
