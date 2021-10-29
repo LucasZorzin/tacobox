@@ -7,7 +7,7 @@
   color: #a7aaac !important;
 }
 
-textarea:focus, input[type="text"]:focus, textarea[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, .form-control:focus, .form-select:focus {
+textarea:focus, input[type="text"]:focus, textarea[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, .form-control:focus, .form-select:focus, .btn-close:focus {
   border-color: rgba(255, 166, 0, 0.329);
   -webkit-box-shadow: -1px 1px 4px 0px rgba(255, 166, 0, 0.329);
           box-shadow: -1px 1px 4px 0px rgba(255, 166, 0, 0.329);
