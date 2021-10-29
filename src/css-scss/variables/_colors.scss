@@ -31,6 +31,11 @@ textarea:focus, input[type="text"]:focus,textarea[type="text"]:focus,   input[ty
     box-shadow: -1px 1px 4px 0px rgba(255, 166, 0, 0.329);
 }
 
+.btn:focus{
+    border-color: $orange;
+    box-shadow: -1px 1px 10px 0px rgba(255, 166, 0, 0.473);
+}
+
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio: 3;
