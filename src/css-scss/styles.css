@@ -13,6 +13,12 @@ textarea:focus, input[type="text"]:focus, textarea[type="text"]:focus, input[typ
           box-shadow: -1px 1px 4px 0px rgba(255, 166, 0, 0.329);
 }
 
+.btn:focus {
+  border-color: #e7801b;
+  -webkit-box-shadow: -1px 1px 10px 0px rgba(255, 166, 0, 0.473);
+          box-shadow: -1px 1px 10px 0px rgba(255, 166, 0, 0.473);
+}
+
 .easter-egg {
   font-size: 0.5rem;
   text-align: center;
