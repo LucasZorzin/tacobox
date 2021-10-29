@@ -14,10 +14,11 @@ $(document).ready(() => {
 $('#delivery-nav').click(() => {
     $('#delivery')[0].classList.toggle("titles-active");
     setTimeout(()=>{$('#delivery')[0].classList.toggle("titles-inactive");},1200);
+    setTimeout(()=>{$('#delivery')[0].classList.toggle("titles-active");},1400); setTimeout(()=>{$('#delivery')[0].classList.toggle("titles-inactive");},1400);
 })
 
 $('#take-away-nav').click(() => {
-
     $('#take-away')[0].classList.toggle("titles-active");
     setTimeout(()=>{$('#take-away')[0].classList.toggle("titles-inactive");},1200);
+    setTimeout(()=>{$('#take-away')[0].classList.toggle("titles-active");},1400); setTimeout(()=>{$('#take-away')[0].classList.toggle("titles-inactive");},1400);
 })
