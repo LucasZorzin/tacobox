@@ -6,7 +6,7 @@ const contenedorCarrito = document.getElementById('carrito-contenedor');
 
 const contadorCarrito = document.getElementById('contadorCarrito');
 const precioTotal = document.getElementById('precioTotal');
-const URLJSON = "./src/data/stock.json";
+const URLJSON = "https://script.google.com/macros/s/AKfycbzIrn-2rA3CDfYHAvTXN_t0xfuPE72d71flg3edPoyIN2TY0xV4/exec";
 
 mostrarProductos();
 obtenerLocalStorage();
